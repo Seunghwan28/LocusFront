@@ -1,16 +1,9 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL;
-
-export const api = axios.create({
-  baseURL: `${API_URL}/api`,
-});
-
-
 // 1. Axios 인스턴스 생성
 // 백엔드 주소(4000번 포트)를 기본 URL로 설정합니다.
 export const client = axios.create({
-  baseURL: `${API_URL}/api`, // Fastify 백엔드 주소
+  baseURL: import.meta.env.VITE_API_URL, // Fastify 백엔드 주소
   headers: {
     'Content-Type': 'application/json',
   },
